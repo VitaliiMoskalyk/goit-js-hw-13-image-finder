@@ -12,21 +12,51 @@
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="../node_modules/basiclightbox/dist/basicLightbox.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
-      <button class="search" type="button">search</button>
+    <form onsubmit="submitForm(event)" action="" class="search-form" id="search-form">
+      <input type="search" class="input-area" />
+      <i class="fa fa-search search-button"></i>
     </form>
 
+    <svg viewBox="0 0 1000 800" class="svg">
+      <symbol id="s-text">
+        <text text-anchor="middle" x="15%" y="9%" class="text--line">find</text>
+        <text text-anchor="middle" x="50%" y="29%" class="text--line">IMAGES</text>
+      </symbol>
+
+      <g class="g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+      </g>
+    </svg>
     <div class="images-list">
       <ul class="gallery"></ul>
     </div>
+
+    <div id="anchor"></div>
+
     <div class="relat">
-      <button class="button_moreload visually-hidden">load more</button>
-      <button class="up visually-hidden" id="up">UP</button>
+      <button class="button_moreload visually-hidden">&#8659;</button>
+      <button class="button_upper visually-hidden" id="up">&#8657;</button>
     </div>
-    <div id="box"></div>
+
+    <script type="text/JavaScript">
+      function submitForm(event){
+        event.preventDefault();
+        window.history.back();
+      }
+    </script>
     <script src="./index.js"></script>
     <script src="../node_modules/basiclightbox/dist/basicLightbox.min.js"></script>
   </body>

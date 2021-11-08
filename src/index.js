@@ -11,13 +11,20 @@ const searchData = {
 }
 
 const queryselectors = {
-    searchEl: document.querySelector('.search'),
+    searchEl: document.querySelector('.search-button'),
     ingListRef: document.querySelector('.gallery'),
     button_moreload: document.querySelector('.button_moreload'),
-    upBtn:document.querySelector('.up'),
+    upBtn: document.querySelector('.button_upper'),
+    svg: document.querySelector('.svg'),
+    inputArea:document.querySelector('.input-area'),
 };
 
-queryselectors.searchEl.addEventListener('click',getFormTextContent );
+queryselectors.searchEl.addEventListener('click', getFormTextContent);
+queryselectors.inputArea.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+        getFormTextContent()
+    }
+});
 queryselectors.button_moreload.addEventListener('click', overLoad);
 queryselectors.upBtn.addEventListener('click', () => upperBtn(element2));
 
@@ -30,15 +37,14 @@ function getFormTextContent() {
     queryselectors.ingListRef.innerHTML=``;
     getImages(API).then(o => {
         markupBeforeend(o.hits);
-        if (o.hits.length > 6) {
-            
+        if (o.hits.length >= 1) queryselectors.svg.classList.add('visually-hidden');
+        if (o.hits.length > 11) {
             queryselectors.button_moreload.classList.remove('visually-hidden');
             queryselectors.upBtn.classList.remove('visually-hidden');
         }
     })
         
 }
-
 
 function overLoad() {
     searchData.pageNumber = searchData.pageNumber + 1;
@@ -49,7 +55,6 @@ function overLoad() {
         .then(()=>upperBtn(element)
 )}
 
-
 function markupBeforeend(data) {
     if (data.length > 0) {
             const imagesMarkup = createMarkup(data, imagesList);
@@ -57,10 +62,7 @@ function markupBeforeend(data) {
         }
 }
 
-
-
-
-const element = document.getElementById('box');
+const element = document.getElementById('anchor');
 const element2 = document.getElementById('search-form');
 
 function upperBtn(el) { 
@@ -76,8 +78,6 @@ function createMarkup(data,template) {
             return data.map(template).join('');
 }
         
-
-
 
 queryselectors.ingListRef.addEventListener("click", clickImage);
 
