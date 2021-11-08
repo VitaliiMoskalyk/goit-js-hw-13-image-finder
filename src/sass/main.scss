@@ -9,7 +9,7 @@
 
 body {
   padding: 10px;
-  padding-top: 30px;
+  padding-top: 100px;
   background-color: rgba(169, 169, 169, 0.363);
 }
 
@@ -23,6 +23,7 @@ body {
   width: 25%;
   height: 250px;
   margin-bottom: 2%;
+
   overflow: hidden;
   margin-right: auto;
   margin-left: auto;
@@ -40,7 +41,6 @@ body {
 
 .photo-card {
   position: relative;
-
   width: 98%;
 }
 
@@ -51,6 +51,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+
   background-color: rgba(255, 250, 250, 0.459);
   border-bottom: 10px solid rgba(14, 185, 176, 0.151);
 }
@@ -166,17 +167,17 @@ form:hover .fa {
 $colors: #360745, #d61c59, #e7d84b, #efeac5, #1b8798;
 
 .text--line {
-  font-size: 1.5em;
+  font-size: 2em;
   font: 8em/1 Arial;
 }
 
 $max: 5;
-$stroke-step: 7%;
+$stroke-step: 10%;
 .text-copy {
   fill: none;
   stroke: white;
   stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-  stroke-width: 3px;
+  stroke-width: 5px;
 
   animation: stroke-offset 9s infinite linear;
 
