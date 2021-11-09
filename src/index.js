@@ -66,12 +66,10 @@ const element = document.getElementById('anchor');
 const element2 = document.getElementById('search-form');
 
 function upperBtn(el) { 
-    setTimeout(() => {
-        el.scrollIntoView({
+  el.scrollIntoView({
   behavior: 'smooth',
   block: 'end',
 });
-    },500)
 }
 
 function createMarkup(data,template) {
