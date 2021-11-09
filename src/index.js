@@ -24,11 +24,12 @@ queryselectors.inputArea.addEventListener('keydown', (e) => {
   
  
       
-        event.preventDefault();
-        window.history.back();
+        
     
     
     if (e.keyCode === 13) {
+      event.preventDefault();
+        window.history.back();
         getFormTextContent()
     }
 });
