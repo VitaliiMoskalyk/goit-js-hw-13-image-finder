@@ -21,7 +21,7 @@
     />
   </head>
   <body>
-    <form onsubmit="submitForm(event)" action="" class="search-form" id="search-form">
+    <form action="" class="search-form" id="search-form">
       <input type="search" class="input-area" />
       <i class="fa fa-search search-button"></i>
     </form>
@@ -53,12 +53,6 @@
       <button class="button_upper visually-hidden" id="up">&#8657;</button>
     </div>
 
-    <script type="text/JavaScript">
-      function submitForm(event){
-        event.preventDefault();
-        window.history.back();
-      }
-    </script>
     <script src="./index.js"></script>
     <script src="../node_modules/basiclightbox/dist/basicLightbox.min.js"></script>
   </body>
