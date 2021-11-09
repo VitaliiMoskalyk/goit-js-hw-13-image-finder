@@ -1,16 +1,10 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
-
-// Стили для файла с примером HTML-фрагмента
 @import './modern-normolize';
 @import './global-reset';
 
 body {
   padding: 10px;
   padding-top: 100px;
-  background-color: rgba(169, 169, 169, 0.363);
+  background-color: rgba(56, 89, 95, 0.363);
 }
 
 .gallery {
@@ -19,6 +13,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
 .photo-container {
   width: 25%;
   height: 250px;
@@ -42,24 +37,30 @@ body {
 .photo-card {
   position: relative;
   width: 98%;
+  height: auto;
+  background: linear-gradient(rgba(14, 185, 176, 0.151), rgba(56, 89, 95, 0.363));
 }
 
 .stats {
   position: absolute;
   display: flex;
-  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
-
-  background-color: rgba(255, 250, 250, 0.459);
-  border-bottom: 10px solid rgba(14, 185, 176, 0.151);
+  background: linear-gradient(rgba(255, 250, 250, 0.822), rgba(14, 185, 176, 0.151));
 }
 
 .stats-item {
   padding: 3px;
-  color: rgba(39, 38, 38, 0.726);
+  color: rgba(1, 47, 58, 0.726);
+  cursor: pointer;
 }
+
+.stats-item:hover {
+  color: rgba(0, 253, 253, 0.473);
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -72,6 +73,7 @@ body {
   clip-path: inset(50%);
   margin: -1px;
 }
+
 .button_upper {
   position: fixed;
   right: 2%;
@@ -81,10 +83,11 @@ body {
   z-index: 2;
   border-radius: 50%;
   border: hidden;
-  border: 15px solid rgba(14, 185, 176, 0.151);
-  background-color: rgba(169, 169, 169, 0.616);
+  border: 4px solid white;
+  background: linear-gradient(rgba(255, 250, 250, 0.822), rgba(14, 185, 176, 0.541));
   color: rgb(65, 64, 63);
 }
+
 .button_moreload {
   position: fixed;
   left: 2%;
@@ -94,10 +97,11 @@ body {
   z-index: 2;
   border-radius: 50%;
   border: hidden;
-  border: 15px solid rgba(14, 185, 176, 0.151);
-  background-color: rgba(169, 169, 169, 0.616);
+  border: 4px solid white;
+  background: linear-gradient(rgba(255, 250, 250, 0.822), rgba(14, 185, 176, 0.541));
   color: rgb(65, 64, 63);
 }
+
 .button_upper:hover,
 .button_moreload:hover {
   background-color: rgba(112, 128, 144, 0.637);
@@ -112,7 +116,7 @@ body {
   transition: all 1s;
   width: 50px;
   height: 50px;
-  background: rgb(169, 169, 169);
+  background: linear-gradient(rgba(255, 250, 250, 0.822), rgba(14, 185, 176, 0.541));
   box-sizing: border-box;
   border-radius: 25px;
   border: 4px solid white;
@@ -151,7 +155,7 @@ input {
 }
 
 form:hover {
-  width: 200px;
+  width: 250px;
   cursor: pointer;
 }
 
@@ -160,7 +164,7 @@ form:hover input {
 }
 
 form:hover .fa {
-  background-color: rgb(112, 128, 144);
+  background: rgba(112, 128, 144);
   color: black;
 }
 
