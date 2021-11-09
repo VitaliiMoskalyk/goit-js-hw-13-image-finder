@@ -21,6 +21,13 @@ const queryselectors = {
 
 queryselectors.searchEl.addEventListener('click', getFormTextContent);
 queryselectors.inputArea.addEventListener('keydown', (e) => {
+  
+ 
+      function submitForm(e){
+        event.preventDefault();
+        window.history.back();
+      }
+    
     if (e.keyCode === 13) {
         getFormTextContent()
     }
