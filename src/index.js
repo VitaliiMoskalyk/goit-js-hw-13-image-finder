@@ -82,10 +82,14 @@ queryselectors.ingListRef.addEventListener("click",clickImage);
 
 function clickImage(event) {
   console.dir(event.target.localName=='img');
+  if(event.target.localName=='img'){
     const instance = basicLightbox.create(`
     <img src="${event.target.srcset}" width="800" height="600">
 `)
 instance.show()
   
+  
+  }
+    
 }
 
