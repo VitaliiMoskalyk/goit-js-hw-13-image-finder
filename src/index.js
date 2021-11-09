@@ -78,7 +78,8 @@ function createMarkup(data,template) {
         
 
 queryselectors.ingListRef.addEventListener("click",(ev)=>{ 
-  if(console.dir(ev.target); clickImage});
+  if(console.dir(ev.target);
+     clickImage});
 
 function clickImage(event) {
     const instance = basicLightbox.create(`
