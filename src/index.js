@@ -77,15 +77,14 @@ function createMarkup(data,template) {
 }
         
 
-queryselectors.ingListRef.addEventListener("click", clickImage);
+queryselectors.ingListRef.addEventListener("click",(ev)=>{ 
+  if(ev.target.nodeName="IMG") clickImage});
 
 function clickImage(event) {
-  console.log(event.target);
-  if(event.target.nodeName==IMG){
     const instance = basicLightbox.create(`
     <img src="${event.target.srcset}" width="800" height="600">
 `)
 instance.show()
-  }
+  
 }
 
