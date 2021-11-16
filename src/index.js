@@ -1,7 +1,8 @@
 import './sass/main.scss';
 import { getImages } from './js/apiService';
 import imagesList from './templates/image_temp.hbs';
-import * as basicLightbox from 'basiclightbox'
+import * as basicLightbox from 'basiclightbox';
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -52,7 +53,7 @@ function overLoad() {
  
     getImages(searchValue, ++pageNumber, key)
         .then(o => markupBeforeend(o.hits))
-        .then(() => upperBtn(queryselectors.ingListRef.children[queryselectors.ingListRef.children.length-12])
+        .then(() => upperBtn(queryselectors.ingListRef.children[queryselectors.ingListRef.children.length - 12])
 )}
 
 function markupBeforeend(data) { 
@@ -92,3 +93,11 @@ instance.show()
   } 
 }
 
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 10);
+}
+  

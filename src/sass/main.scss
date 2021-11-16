@@ -37,8 +37,11 @@ body {
 .photo-card {
   position: relative;
   width: 98%;
-  height: auto;
-  background: linear-gradient(rgba(14, 185, 176, 0.151), rgba(56, 89, 95, 0.363));
+  height: 70px;
+  background-image: url(../ZKZg.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .stats {
@@ -200,4 +203,53 @@ $stroke-step: 10%;
     stroke-dashoffset: $stroke-step * $max;
     stroke-dasharray: 0 $stroke-step * $max * 2.5;
   }
+}
+
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(lightgray, transparent);
+
+  animation: rotating 1s linear infinite;
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background-color: rgba(56, 89, 95, 0.363);
+  z-index: 1001;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
 }
