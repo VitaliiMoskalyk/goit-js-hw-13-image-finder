@@ -13,7 +13,9 @@ body {
   height: 100%;
   width: 100%;
 }
-
+img {
+  height: inherit;
+}
 .photo-container {
   width: 25%;
   height: 250px;
@@ -32,16 +34,17 @@ body {
   @media screen and(max-width:900px) {
     width: 320px;
   }
+
+  background-image: url(../ZKZg.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
 }
 
 .photo-card {
   position: relative;
   width: 98%;
-  height: 70px;
-  background-image: url(../ZKZg.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  height: 100%;
 }
 
 .stats {
